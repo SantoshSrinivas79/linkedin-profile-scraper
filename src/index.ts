@@ -204,7 +204,7 @@ export class LinkedInProfileScraper {
     this.options = Object.assign(this.options, userDefinedOptions);
 
     if (userDefinedBrowser !== undefined && userDefinedBrowser !== null) {
-      this.browser = Object.assign(this.browser, userDefinedBrowser);
+      this.browser = userDefinedBrowser;
     }    
     
 
