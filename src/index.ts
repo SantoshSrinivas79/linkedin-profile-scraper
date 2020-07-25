@@ -173,7 +173,7 @@ export class LinkedInProfileScraper {
 
   private browser: Browser | null = null;
 
-  constructor(userDefinedOptions: ScraperUserDefinedOptions) {
+  constructor(userDefinedOptions: ScraperUserDefinedOptions, userDefinedBrowser = null) {
     const logSection = 'constructing';
     const errorPrefix = 'Error during setup.';
 
@@ -202,6 +202,11 @@ export class LinkedInProfileScraper {
     }
 
     this.options = Object.assign(this.options, userDefinedOptions);
+
+    if (userDefinedBrowser !== undefined && userDefinedBrowser !== null) {
+      this.browser = Object.assign(this.browser, userDefinedBrowser);
+    }    
+    
 
     statusLog(logSection, `Using options: ${JSON.stringify(this.options)}`);
   }
@@ -301,8 +306,8 @@ export class LinkedInProfileScraper {
 
       // Use already open page
       // This makes sure we don't have an extra open tab consuming memory
-      const firstPage = (await this.browser.pages())[0];
-      await firstPage.close();
+      // const firstPage = (await this.browser.pages())[0];
+      // await firstPage.close();
 
       // Method to create a faster Page
       // From: https://github.com/shirshak55/scrapper-tools/blob/master/src/fastPage/index.ts#L113

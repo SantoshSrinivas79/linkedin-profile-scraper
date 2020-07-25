@@ -349,3 +349,11 @@ You probably need to follow the setup steps when the scraper logs show it's not 
 
 ### Usage limits
 LinkedIn has some usage limits in place. Please respect those and use their options to increase limits. More info: [LinkedIn Commercial Use Limit](https://www.linkedin.com/help/linkedin/answer/52950)
+
+
+### Build
+
+```sh
+npm install --dev
+npm run build
+```
